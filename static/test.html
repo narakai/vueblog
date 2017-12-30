@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=1640,user-scalable=no">
+  <meta name="format-detection" content="telephone=no"/>
+  <title>简单粗暴！比哪个反应快！抢全球最贵海岛双人往返机票</title>
+  <link rel="icon" href="//pre.ih5.cn/favicon.ico" type="image/x-icon">
+  <style>
+    html, body {
+      margin: 0px;
+      height: 100%;
+    }
+
+    #loading-bottom {
+      width: 204px;
+      height: 34px;
+      position: absolute;
+      bottom: 60px;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+  </style>
+  <script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+  <script src="ih5core.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="//pre.ih5.cn/v3/loading/7025477.css?t=1514559709">
+  <script id="h5vSDK" type="text/javascript"
+          src="//pre.ih5.cn/h5value/h5vsdk.min.js?sid=kIrpF7RpYZVvnmnBQDbWQ54V&tid=7025477&wx_ext=0"></script>
+</head>
+<body>
+<div id="loadingPage"><img id="loadingIcon" src=" http://file.ih5.cn/v3/files/1752160/20171229/b0dec74b.gif"/>
+  <div id="loadingText">100</div>
+  <div id="loadingBar">
+    <div id="loadingBarInner"></div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+  var loadingDone = false;
+  var loadingIcon = document.getElementById("loadingIcon");
+  if (loadingIcon) {
+    loadingIcon.style.transform = "translate(-50%,-50%) scale(" + window.innerWidth / 640 + ',' + window.innerWidth / 640 + ")  ";
+    loadingIcon.style.msTransform = "translate(-50%,-50%) scale(" + window.innerWidth / 640 + ',' + window.innerWidth / 640 + ")  ";
+    loadingIcon.style.WebkitTransform = "translate(-50%,-50%) scale(" + window.innerWidth / 640 + ',' + window.innerWidth / 640 + ")  ";
+  }
+
+
+  var loadingBg = document.getElementById("vx-loading-text");
+  if (loadingBg) {
+    loadingBg.style.transform = "scale(" + window.innerWidth / 640 + ',' + window.innerHeight / 1040 + ")  ";
+    loadingBg.style.msTransform = "scale(" + window.innerWidth / 640 + ',' + window.innerHeight / 1040 + ")  ";
+    loadingBg.style.WebkitTransform = "scale(" + window.innerWidth / 640 + ',' + window.innerHeight / 1040 + ")  ";
+  }
+
+  var circum = 471;
+  var d = document.getElementById('circle');
+  if (d) {
+    circum = parseFloat(window.getComputedStyle(d)['r']) * 2 * 3.14;
+  }
+
+  function onprogress(p) {
+    if (loadingDone) return;
+
+    var loadingPage = document.getElementById("loadingPage");
+    if (loadingPage) {
+      loadingPage.style.display = 'block';
+    }
+
+    var circleDom = document.getElementById('circle');
+    if (circleDom) {
+      circleDom.style['stroke-dashoffset'] = circum / 100 * (100 - p);
+    }
+
+    var loadingTextDom = document.getElementById("loadingText");
+    if (loadingTextDom) {
+      loadingTextDom.innerText = p + "%";
+    }
+
+    var bar = document.getElementById("loadingBarInner");
+    if (bar) {
+      bar.style.width = p + '%';
+    }
+
+    if (p == 100) {
+      loadingDone = true;
+      var e = document.getElementById("loadingPage");
+      e.parentNode.removeChild(e);
+
+    }
+  }
+
+  /*
+  var count = 0;
+  var fn = function() {
+    if (count <= 100) {
+      onprogress(count);
+    }
+    count++;
+    if (count <= 100)
+      setTimeout(fn, 20);
+  }
+  setTimeout(fn, 20);
+  */
+
+  window.VXCORE.load('http://pre.ih5.cn/v3/', 'works/5a450f132d4b7f1b43887f64?1514559709', onprogress, {
+    "nid": 7025477,
+    "appId": "wx398d72182f69dfe3",
+    "timestamp": "1514631655",
+    "nonceStr": "QrwlzG6s7H2yDsko",
+    "signature": "c2fa8ffdbd6cba1ad664100008db7112bff27706",
+    "openid": "odVsFjyAmQAT6Yaa49aFRjERi3yw",
+    "sockServer": 'screen.ih5.cn:8282',
+    "shareFrame": '',
+    "latestUser": '0',
+    "playRecord": "verge.vxplo.cn",
+    "remoteSvr": "file3fe5c9daae07.aiwall.com"
+  });
+</script>
+</body>
+</html>
